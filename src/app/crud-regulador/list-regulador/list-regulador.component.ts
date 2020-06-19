@@ -1,0 +1,72 @@
+import { ResponseApi } from 'src/app/models/response-api';
+import { ReguladorService } from 'src/app/services/reguladorService/regulador.service';
+import { Component, OnInit } from '@angular/core';
+import { Regulador } from 'src/app/models/regulador.model';
+ 
+
+@Component({
+  selector: 'app-list-regulador',
+  templateUrl: './list-regulador.component.html',
+  styleUrls: ['./list-regulador.component.css']
+})
+export class ListReguladorComponent implements OnInit {
+
+  page:number = 0; // pagina atual (pageIndex)
+  count:number = 10; // quantidade de itens listados na pagina (pagesize)
+  pages:Array<number>; // quantidade total de paginas (totalPages)
+  totalElements:Array<number>; //quantidade total de itens do DB (length)
+  reguladores: Regulador[]
+  displayedColumns = ['region','code', 'feeder', 'bus', 'model', 'action']
+  
+  constructor(private reguladorService: ReguladorService) { }
+
+  ngOnInit(): void {
+    this.findAll(this.page,this.count);
+    
+    /* 
+    this.reguladorService.read2().subscribe(responseApi =>{
+      this.reguladores = responseApi.data;
+    })*/
+  }
+
+  findAll(page:number,count:number) {
+    this.reguladorService.read(page,count).subscribe((responseApi:ResponseApi) =>{
+      this.reguladores = responseApi['data']['content']; // data: todas as infomaçoes de obj, paginação  etc. content: informação de cada obj listado 
+      this.pages = new Array(responseApi['data'] ['totalPages']); // totalPages: numero total de paginas 
+      this.totalElements = new Array(responseApi['data']['totalElements']); //totalElements: total de itens do DB
+      console.log(responseApi);
+      console.log(this.totalElements);
+      console.log(this.pages);
+
+   });
+  }
+
+  setPreviousPage(event:any) {
+    event.preventDefault();
+    if(this.page > 0) {
+      this.page -= this.page;
+      this.findAll(this.page,this.count);
+    }
+  }
+
+  setPage(i: number,event:any) {
+    event.preventDefault();
+    this.page = i;
+    this.findAll(this.page,this.count);
+  }
+
+  setNextPage(event:any) {
+    event.preventDefault();
+    if(this.page+1 < this.pages.length) {
+      this.page += this.page;
+      this.findAll(this.page, this.count);
+    }
+  }
+
+  /*
+  ngOnInit(): void {
+    this.reguladorService.read().subscribe({next: reguladores =>{
+      console.log(reguladores)}, error:err => console.log('Error',err)})
+  }*/
+
+}

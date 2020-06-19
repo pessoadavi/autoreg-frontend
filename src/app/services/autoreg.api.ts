@@ -1,0 +1,1 @@
+export const AUTOREG: string = 'http://localhost:8080';

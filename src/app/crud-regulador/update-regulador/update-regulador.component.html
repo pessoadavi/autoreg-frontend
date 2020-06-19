@@ -1,0 +1,56 @@
+<mat-card class="card" class="mat-elevation-z3">
+    <mat-card-title>
+        Atualizar Produto
+    </mat-card-title>
+</mat-card>
+<mat-card class="card" >
+    <form>
+        <mat-form-field class="inputForm">
+            <input matInput placeholder="Código" [(ngModel)] = regulador.code name="code">
+        </mat-form-field>
+        <mat-form-field class="inputForm">
+            <input matInput placeholder="Área" [(ngModel)] = regulador.region name="region">
+        </mat-form-field>
+        <mat-form-field class="inputForm">
+            <input matInput placeholder="Subestação" [(ngModel)] = regulador.feeder name="feeder">
+        </mat-form-field>
+        <mat-form-field class="inputForm">
+            <input matInput placeholder="Alimentador" [(ngModel)] = regulador.bus name="bus">   
+        </mat-form-field>
+        <mat-form-field class="inputForm">
+            <input matInput placeholder="Modelo" [(ngModel)] = regulador.model name="model">
+        </mat-form-field>
+    </form>
+    <form>
+        <mat-form-field class="inputForm">
+            <input matInput placeholder="Tensão Nominal" [(ngModel)] = regulador.voltage name="voltage">
+        </mat-form-field>
+        <mat-form-field class="inputForm">
+            <input matInput placeholder="Corrente Nominal" [(ngModel)] = regulador.eCurrent name="eCurrent">
+        </mat-form-field>
+        <mat-form-field class="inputForm">
+            <input matInput placeholder="Nível de Tensão" [(ngModel)] = regulador.lVoltage name="lVoltage">
+        </mat-form-field>
+        <mat-form-field class="inputForm">
+            <input matInput placeholder="Fabricante" [(ngModel)] = regulador.manufacturer name="manufacturer">   
+        </mat-form-field>
+        <mat-form-field class="inputForm">
+            <input matInput placeholder="Ano de Fabricação" [(ngModel)] = regulador.yearManufacture name="yearManufacture">
+        </mat-form-field>
+    </form>
+    
+    <form>
+        <mat-form-field class="inputForm">
+            <input matInput placeholder="Data de Energização" [(ngModel)] = regulador.voltage name="dateEnergization">
+        </mat-form-field>
+        <mat-form-field class="inputForm">
+            <input matInput placeholder="Última Inspeção" [(ngModel)] = regulador.eCurrent name="lastInspetion">
+        </mat-form-field>
+        <mat-form-field class="inputForm">
+            <input matInput placeholder="Última Atualização" [(ngModel)] = regulador.lVoltage name="lastUpdate">
+        </mat-form-field>
+    </form>
+    
+</mat-card>
+<button mat-raised-button color="primary" (click)="update()" class="card"> Atualizar</button>
+<button mat-raised-button color="primary" (click)="cancel()"> Cancelar</button>

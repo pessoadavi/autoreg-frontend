@@ -1,0 +1,28 @@
+table {
+    width: 100%;
+  }
+
+.delete {
+  margin: 10px;
+  color: red;
+}
+
+.edit {
+  margin: 10px;
+}
+
+.hide {
+  display: none;
+}
+
+mat-footer-row mat-footer-cell {
+  font-style: italic;
+  display: flex;
+ 
+}
+
+.card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

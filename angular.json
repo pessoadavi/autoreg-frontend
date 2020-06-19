@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "autoreg-frontend": {
+    "autoreg-frontend2": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,17 +13,18 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/autoreg-frontend",
+            "outputPath": "dist/autoreg-frontend2",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
-            "aot": false,
+            "aot": true,
             "assets": [
               "src/favicon.ico",
               "src/assets"
             ],
             "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css",
               "src/styles.css"
             ],
             "scripts": []
@@ -41,7 +42,6 @@
               "sourceMap": false,
               "extractCss": true,
               "namedChunks": false,
-              "aot": true,
               "extractLicenses": true,
               "vendorChunk": false,
               "buildOptimizer": true,
@@ -63,18 +63,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "autoreg-frontend:build"
+            "browserTarget": "autoreg-frontend2:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "autoreg-frontend:build:production"
+              "browserTarget": "autoreg-frontend2:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "autoreg-frontend:build"
+            "browserTarget": "autoreg-frontend2:build"
           }
         },
         "test": {
@@ -89,6 +89,7 @@
               "src/assets"
             ],
             "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css",
               "src/styles.css"
             ],
             "scripts": []
@@ -111,15 +112,19 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "autoreg-frontend:serve"
+            "devServerTarget": "autoreg-frontend2:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "autoreg-frontend:serve:production"
+              "devServerTarget": "autoreg-frontend2:serve:production"
             }
           }
         }
       }
-    }},
-  "defaultProject": "autoreg-frontend"
+    }
+  },
+  "defaultProject": "autoreg-frontend2",
+  "cli": {
+    "analytics": "2b6a389b-1fd8-48c8-b73e-46ee02ba85c3"
+  }
 }

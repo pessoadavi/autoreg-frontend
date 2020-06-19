@@ -1,0 +1,17 @@
+.footer {
+    position: fixed;
+    bottom: 0;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    background-color: white;
+    font-size: 15px;
+}
+
+.footer .logo {
+    max-height: 32px;
+    padding-left: 7px;
+    padding-right: 7px;
+    align-items: center;
+    margin-top: 0px;
+}
