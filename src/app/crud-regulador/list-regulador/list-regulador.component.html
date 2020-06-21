@@ -59,6 +59,12 @@
         <mat-footer-row *matFooterRowDef="['noData']" [ngClass]="{'hide': !(reguladores!=null && reguladores.length==0)}"></mat-footer-row>
     </table>
     
+    <mat-paginator  [length]="totalElements"
+                    [pageSize]="count"
+                    [pageSizeOptions]="[5, 10, 25, 100]"
+                    (page)="setPageEvent($event)">
+    </mat-paginator>
+    
 </div>
 
 
