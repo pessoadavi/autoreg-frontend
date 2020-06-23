@@ -18,23 +18,9 @@ export class UpdateReguladorComponent implements OnInit {
 
   regulador: Regulador
   
-  ngOnInit(): void {
-    const id = +this.route.snapshot.paramMap.get('id')
-    this.reguladorService.readById(id).subscribe(regulador => {
-      this.regulador = regulador;
-    });
-  }
+  ngOnInit(): void {}
 
-  update(): void {
-    this.reguladorService.update(this.regulador).subscribe(responseApi => {
-      this.regulador = responseApi
-      this.reguladorService.showMessage("Regulador atualizado");
-      this.router.navigate(['/reguladores']);
-    })
-  }
 
-  cancel(): void {
-    this.router.navigate(['/products']);
-  }
 
+  
 }

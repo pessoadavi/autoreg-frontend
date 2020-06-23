@@ -29,6 +29,8 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatExpansionModule} from '@angular/material/expansion';
 import { MatSortModule } from '@angular/material/sort';
 import {MatIconModule} from '@angular/material/icon';
+import {MatDialogModule} from '@angular/material/dialog';
+
 
 
 @NgModule({
@@ -64,10 +66,12 @@ import {MatIconModule} from '@angular/material/icon';
     MatPaginatorModule,
     MatSortModule,
     MatExpansionModule,
-    MatIconModule
+    MatIconModule,
+    MatDialogModule
     
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  //entryComponents: [DeleteReguladorComponent]
 })
 export class AppModule { }

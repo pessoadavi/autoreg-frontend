@@ -3,7 +3,7 @@ import { Observable } from 'rxjs';
 import { Regulador } from './../../models/regulador.model';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { Injectable, EventEmitter } from '@angular/core';
 
 @Injectable({
   providedIn: 'root'
@@ -11,12 +11,23 @@ import { Injectable } from '@angular/core';
 export class ReguladorService {
 
   baseUrl = 'http://localhost:8080/reguladores';
+  static sendId = new EventEmitter();
 
   constructor(private http: HttpClient, private snackBar: MatSnackBar) { }
+
+  /*Método para e nviar o id do regulador selecionado para ser deletado */
+  sendCurrentId(id:any) {
+    ReguladorService.sendId.emit(id);
+  }
 
   /* Método para cadastrar um novo regulador */
   create(regulador: Regulador): Observable<Regulador> {
     return this.http.post<Regulador>(this.baseUrl, regulador);
+  }
+
+  /* Método para deletar um regulador */
+  delete(id: number) {
+    return this.http.delete(`${this.baseUrl}/${id}`);
   }
 
   /* Método para encontrar um regulador pelo seu id */

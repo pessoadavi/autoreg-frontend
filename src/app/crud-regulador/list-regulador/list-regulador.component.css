@@ -3,12 +3,12 @@ table {
   }
 
 .delete {
-  margin: 10px;
-  color: red;
+
 }
 
 .edit {
-  margin: 10px;
+  margin-right: 30px;
+
 }
 
 .hide {
@@ -21,8 +21,6 @@ mat-footer-row mat-footer-cell {
  
 }
 
-.card {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+v-middle {
+  padding-top: 10px;
 }

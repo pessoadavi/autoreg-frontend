@@ -3,6 +3,8 @@ import { ReguladorService } from 'src/app/services/reguladorService/regulador.se
 import { Component, OnInit } from '@angular/core';
 import { Regulador } from 'src/app/models/regulador.model';
 import { PageEvent } from '@angular/material/paginator';
+import { MatDialog } from '@angular/material/dialog';
+import { DeleteReguladorComponent } from '../delete-regulador/delete-regulador.component';
 
 
 @Component({
@@ -21,7 +23,9 @@ export class ListReguladorComponent implements OnInit {
   displayedColumns = ['region','code', 'feeder', 'bus', 'model', 'action']
   event: PageEvent;
   
-  constructor(private reguladorService: ReguladorService) { }
+
+  constructor(private reguladorService: ReguladorService,
+              private dialog: MatDialog) { }
 
   ngOnInit(): void {
     this.findAll(this.page,this.count);
@@ -50,6 +54,11 @@ export class ListReguladorComponent implements OnInit {
     this.page = event.pageIndex;
     this.totalElements = event.length;
     this.findAll(this.page,this.count);
+  }
+
+  openDialogForDelete(id:any) {
+    this.dialog.open(DeleteReguladorComponent);
+    console.log(id); 
   }
 
   /* 
