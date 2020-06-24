@@ -29,11 +29,7 @@ export class ListReguladorComponent implements OnInit {
 
   ngOnInit(): void {
     this.findAll(this.page,this.count);
-    
-    /* 
-    this.reguladorService.read2().subscribe(responseApi =>{
-      this.reguladores = responseApi.data;
-    })*/
+  
   }
 
   findAll(page:number,count:number) {
@@ -49,6 +45,7 @@ export class ListReguladorComponent implements OnInit {
    });
   }
 
+  /* Configuração da paginação do angular material */
   setPageEvent(event?:PageEvent) {
     this.count = event.pageSize;
     this.page = event.pageIndex;
@@ -56,10 +53,19 @@ export class ListReguladorComponent implements OnInit {
     this.findAll(this.page,this.count);
   }
 
+ 
+
+
+
+
+
+
+  /*
   openDialogForDelete(id:any) {
     this.dialog.open(DeleteReguladorComponent);
     console.log(id); 
-  }
+  }*/
+
 
   /* 
   Caso use os método abaixo para paginação em outra biblioteca de template precisa ativar as 
@@ -85,12 +91,6 @@ export class ListReguladorComponent implements OnInit {
       this.page += this.page;
       this.findAll(this.page, this.count);
     }
-  }*/
-
-  /*
-  ngOnInit(): void {
-    this.reguladorService.read().subscribe({next: reguladores =>{
-      console.log(reguladores)}, error:err => console.log('Error',err)})
   }*/
 
 }

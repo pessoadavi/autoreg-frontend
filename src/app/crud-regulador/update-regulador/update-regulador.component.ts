@@ -10,17 +10,30 @@ import { Regulador } from 'src/app/models/regulador.model';
 })
 export class UpdateReguladorComponent implements OnInit {
 
+  regulador: Regulador;
+  CurrentId: number;
+
   constructor(
               private router: Router,
               private reguladorService: ReguladorService, 
               private route: ActivatedRoute
   ) { }
-
-  regulador: Regulador
   
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    const id = +this.route.snapshot.paramMap.get('id');
+    this.reguladorService.readById(id).subscribe(curretnRegulador => {
+      this.regulador = curretnRegulador['data'];
+      this.CurrentId = id;
+    })
+  }
 
+  updateReg(): void {
 
+  }
+
+  cancel(): void {
+    this.router.navigate(['/reguladores']);
+  }
 
   
 }

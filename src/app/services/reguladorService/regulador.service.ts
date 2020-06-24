@@ -11,30 +11,23 @@ import { Injectable, EventEmitter } from '@angular/core';
 export class ReguladorService {
 
   baseUrl = 'http://localhost:8080/reguladores';
-  static sendId = new EventEmitter();
 
   constructor(private http: HttpClient, private snackBar: MatSnackBar) { }
 
-  /*Método para e nviar o id do regulador selecionado para ser deletado */
-  sendCurrentId(id:any) {
-    ReguladorService.sendId.emit(id);
-  }
-
+  
   /* Método para cadastrar um novo regulador */
   create(regulador: Regulador): Observable<Regulador> {
     return this.http.post<Regulador>(this.baseUrl, regulador);
   }
 
   /* Método para deletar um regulador */
-  delete(id: number) {
+  delete(id: any) {
     return this.http.delete(`${this.baseUrl}/${id}`);
   }
 
   /* Método para encontrar um regulador pelo seu id */
   readById(id: number): Observable<Regulador> {
-    //const url = `${this.baseUrl}/${id}`;
     return this.http.get<Regulador>(`${this.baseUrl}/${id}`);
-    //return this.http.get<Product>(url);
   }
 
   /* Método que lerá todos os reguladores cadastrados */

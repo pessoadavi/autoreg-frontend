@@ -30,7 +30,12 @@ import { MatExpansionModule} from '@angular/material/expansion';
 import { MatSortModule } from '@angular/material/sort';
 import {MatIconModule} from '@angular/material/icon';
 import {MatDialogModule} from '@angular/material/dialog';
-
+import {MatCheckboxModule} from '@angular/material/checkbox';
+import { HomeUserComponent } from './crud-user/home-user/home-user.component';
+import { NewUserComponent } from './crud-user/new-user/new-user.component';
+import { DeleteUserComponent } from './crud-user/delete-user/delete-user.component';
+import { ListUserComponent } from './crud-user/list-user/list-user.component';
+import { UpdateUserComponent } from './crud-user/update-user/update-user.component';
 
 
 @NgModule({
@@ -44,7 +49,12 @@ import {MatDialogModule} from '@angular/material/dialog';
     NewReguladorComponent,
     DeleteReguladorComponent,
     ListReguladorComponent,
-    UpdateReguladorComponent
+    UpdateReguladorComponent,
+    HomeUserComponent,
+    NewUserComponent,
+    DeleteUserComponent,
+    ListUserComponent,
+    UpdateUserComponent
     
   ],
   imports: [
@@ -67,7 +77,8 @@ import {MatDialogModule} from '@angular/material/dialog';
     MatSortModule,
     MatExpansionModule,
     MatIconModule,
-    MatDialogModule
+    MatDialogModule,
+    MatCheckboxModule
     
   ],
   providers: [],

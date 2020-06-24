@@ -1,4 +1,3 @@
-import { ResponseApi } from './../../models/response-api';
 import { ReguladorService } from 'src/app/services/reguladorService/regulador.service';
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
@@ -11,19 +10,35 @@ import { Regulador } from 'src/app/models/regulador.model';
 })
 export class DeleteReguladorComponent implements OnInit {
 
-  
   regulador: Regulador;
-  id: number;
+  CurrentId: number;
 
   constructor(private router: Router,
               private reguladorService: ReguladorService,
               private route: ActivatedRoute) { }
 
+              
   ngOnInit(): void {
+    
     const id = +this.route.snapshot.paramMap.get('id');
+    this.reguladorService.readById(id).subscribe(currentRegulador => {
+      this.regulador = currentRegulador['data'];
+      this.CurrentId = id;
+
+    })
   }
 
+  deleteRegStanding(): void {
+    this.reguladorService.delete(this.CurrentId).subscribe(() => {
+      this.reguladorService.showMessage("Regulador deletado");
+      this.router.navigate(['/reguladores']);
+  
+    });
+    
+  }
 
-  deleteRegulador(): void {}
+  cancel(): void {
+    this.router.navigate(['/reguladores']);
+  }
    
 }

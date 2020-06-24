@@ -3,11 +3,13 @@ table {
   }
 
 .delete {
+  color: rgb(255, 0, 0);
 
 }
 
 .edit {
   margin-right: 30px;
+  color:blue
 
 }
 
