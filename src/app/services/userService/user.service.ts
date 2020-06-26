@@ -24,6 +24,11 @@ export class UserService {
     return this.http.delete(`${this.baseUrl}/${id}`);
   }
 
+  /* Método que lerá todos os usuários cadastrados */
+  read(page:number, count:number): Observable<ResponseApi> {
+    return this.http.get<ResponseApi>(`${this.baseUrl}/${page}/${count}`);
+  }
+
   /* Método para achar um usuário pelo seu id */
   readUserById(id: number): Observable<User> {
     return this.http.get<User>(`${this.baseUrl}/${id}`);

@@ -34,7 +34,7 @@ export class NewReguladorComponent implements OnInit {
   }
 
   create() {
-      this.reguladorService.create(this.regulador).subscribe(() =>{
+      this.reguladorService.create(this.regulador).subscribe(() => {
       this.reguladorService.showMessage('Regulador Cadastrado!!!');
       this.router.navigate(['/reguladores']);
     })

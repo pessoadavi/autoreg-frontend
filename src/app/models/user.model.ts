@@ -3,4 +3,5 @@ export interface User {
     email: String;
     login: String;
     password: String;
+    authority: String;
 }

@@ -1,3 +1,7 @@
+import { UpdateUserComponent } from './crud-user/update-user/update-user.component';
+import { DeleteUserComponent } from './crud-user/delete-user/delete-user.component';
+import { NewUserComponent } from './crud-user/new-user/new-user.component';
+import { HomeUserComponent } from './crud-user/home-user/home-user.component';
 import { HomeReguladorComponent } from './crud-regulador/home-regulador/home-regulador.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
@@ -13,7 +17,11 @@ const routes: Routes = [
   { path: 'reguladores/create', component: NewReguladorComponent},
   { path: 'reguladores/delete/:id', component: DeleteReguladorComponent},
   { path: 'reguladores/update/:id', component: UpdateReguladorComponent},
-  { path: 'reguladores/delete/:id', component: DeleteReguladorComponent}
+  
+  { path: 'usuarios', component: HomeUserComponent},
+  { path: 'usuarios/create', component: NewUserComponent},
+  { path: 'usuarios/delete/:id', component: DeleteUserComponent},
+  { path: 'usuarios/update/:id', component: UpdateUserComponent},
 ];
 
 @NgModule({

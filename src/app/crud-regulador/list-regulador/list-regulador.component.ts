@@ -4,8 +4,6 @@ import { Component, OnInit } from '@angular/core';
 import { Regulador } from 'src/app/models/regulador.model';
 import { PageEvent } from '@angular/material/paginator';
 import { MatDialog } from '@angular/material/dialog';
-import { DeleteReguladorComponent } from '../delete-regulador/delete-regulador.component';
-
 
 @Component({
   selector: 'app-list-regulador',

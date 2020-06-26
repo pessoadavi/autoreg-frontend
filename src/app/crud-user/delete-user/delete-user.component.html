@@ -1,1 +1,21 @@
-<p>delete-user works!</p>
+<mat-card class="card" class="mat-elevation-z3">
+    <mat-card-title>
+        Deletar Usuário
+    </mat-card-title>
+</mat-card>
+<mat-card class="card" >
+    <form>
+        <mat-form-field class="inputForm">
+            <input matInput placeholder="Login" [value] = "usuario.login" name="login" disabled>
+        </mat-form-field>
+        <mat-form-field class="inputForm">
+            <input matInput placeholder="E-mail" [value] = "usuario.email" name="email" disabled>
+        </mat-form-field>
+        <mat-form-field class="inputForm">
+            <input matInput placeholder="Permissão" [value] = "usuario.authority" name="permission" disabled>
+        </mat-form-field>
+    </form>
+</mat-card>
+
+        <button mat-raised-button color="primary" (click)="cancel()" class="card"><mat-icon>cancel</mat-icon></button>
+        <button mat-raised-button color="primary" (click)="deleteUserStanding()"><mat-icon>delete_outline</mat-icon></button>

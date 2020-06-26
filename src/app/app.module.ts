@@ -28,14 +28,17 @@ import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatExpansionModule} from '@angular/material/expansion';
 import { MatSortModule } from '@angular/material/sort';
-import {MatIconModule} from '@angular/material/icon';
-import {MatDialogModule} from '@angular/material/dialog';
-import {MatCheckboxModule} from '@angular/material/checkbox';
+import { MatIconModule} from '@angular/material/icon';
+import { MatDialogModule} from '@angular/material/dialog';
+import { MatCheckboxModule} from '@angular/material/checkbox';
 import { HomeUserComponent } from './crud-user/home-user/home-user.component';
 import { NewUserComponent } from './crud-user/new-user/new-user.component';
 import { DeleteUserComponent } from './crud-user/delete-user/delete-user.component';
 import { ListUserComponent } from './crud-user/list-user/list-user.component';
 import { UpdateUserComponent } from './crud-user/update-user/update-user.component';
+import { MatSelectModule } from '@angular/material/select';
+
+
 
 
 @NgModule({
@@ -78,7 +81,8 @@ import { UpdateUserComponent } from './crud-user/update-user/update-user.compone
     MatExpansionModule,
     MatIconModule,
     MatDialogModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+    MatSelectModule
     
   ],
   providers: [],

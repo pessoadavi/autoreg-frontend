@@ -1,0 +1,28 @@
+table {
+    width: 100%;
+  }
+
+.delete {
+  color: rgb(255, 0, 0);
+
+}
+
+.edit {
+  margin-right: 30px;
+  color:blue
+
+}
+
+.hide {
+  display: none;
+}
+
+mat-footer-row mat-footer-cell {
+  font-style: italic;
+  display: flex;
+ 
+}
+
+v-middle {
+  padding-top: 10px;
+}
