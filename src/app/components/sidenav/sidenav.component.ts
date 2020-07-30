@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { UserService } from 'src/app/services/userService/user.service';
+import { SharedService } from 'src/app/services/shared/shared.service';
 
 @Component({
   selector: 'app-sidenav',
@@ -7,9 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SidenavComponent implements OnInit {
 
-  constructor() { }
+
+  logic: boolean;
+  public shared: SharedService;
+
+  constructor(
+      private userService: UserService,
+      private sharedService: SharedService
+  ) { }
 
   ngOnInit(): void {
+    
   }
 
 }

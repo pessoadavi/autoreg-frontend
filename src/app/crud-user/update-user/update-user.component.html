@@ -1,1 +1,21 @@
-<p>update-user works!</p>
+<mat-card class="card" class="mat-elevation-z3">
+    <mat-card-title>
+        Atualizar Produto
+    </mat-card-title>
+</mat-card>
+<mat-card class="card" >
+    <form>
+        <mat-form-field class="inputForm">
+            <input matInput placeholder="E-mail" [(ngModel)] = user.email name="email">
+        </mat-form-field>
+        <mat-form-field class="inputForm">
+            <input matInput placeholder="Senha" [(ngModel)] = user.password name="password">
+        </mat-form-field>
+        <mat-form-field class="inputForm">
+            <input matInput placeholder="Permissão" [(ngModel)] = user.profile name="profile">   
+        </mat-form-field>
+    </form>
+    
+</mat-card>
+<button mat-raised-button color="primary"  class="card" (click)="cancel()"><mat-icon>cancel</mat-icon></button>
+<button mat-raised-button color="primary" (click)="updateUser()"><mat-icon>autorenew</mat-icon></button>

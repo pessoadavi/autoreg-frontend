@@ -1,15 +1,8 @@
-<mat-toolbar color="primary" class="header mat-elevation-z4">
+<mat-toolbar class="header mat-elevation-z6">
     <mat-toolbar-row>
      <a> <span class="space">Auto<strong>Reg</strong></span></a>
-  
-     <span class="title-group">
-      <a class="v-middle" routerLink="{{ routeUrl }}">
-        <i class="material-icons v-middle">
-            {{ icon }}
-        </i>
-        {{ title }}
-      </a>
-    </span>
+     <button mat-stroked-button color="primary" (click)="logout()" class="card configbutton"><mat-icon>exit_to_app</mat-icon></button>
+
     </mat-toolbar-row>
     
   </mat-toolbar>

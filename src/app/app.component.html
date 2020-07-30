@@ -1,5 +1,8 @@
-<app-header></app-header>
+<app-header [hidden]="!showTemplate" ></app-header>
+<app-sidenav [hidden]="!showTemplate"></app-sidenav>
 
-<app-sidenav></app-sidenav>
+<section [ngStyle]="getMyStyles()" class="config" >
+  <router-outlet></router-outlet>
+</section>
 
-<app-footer></app-footer>
+<app-footer [hidden]="!showTemplate"></app-footer> 

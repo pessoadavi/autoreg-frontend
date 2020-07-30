@@ -4,6 +4,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { ResponseApi } from 'src/app/models/response-api';
+import { CurrentUser } from 'src/app/models/currentUser.model';
 
 @Injectable({
   providedIn: 'root'
@@ -13,6 +14,11 @@ export class UserService {
   baseUrl = 'http://localhost:8080/usuarios';
 
   constructor(private http: HttpClient, private snackbar: MatSnackBar) { }
+
+  /* Método para poder fazer o login do usuário */
+  login(user: User): Observable<CurrentUser> {
+    return this.http.post<CurrentUser>(`${this.baseUrl}/auth`, user);
+  }
 
   /* Método para criar um novo usuário */
   createUser(user: User): Observable<User> {

@@ -13,14 +13,10 @@ export class NewUserComponent implements OnInit {
   user: User = {
     
     email: '',
-    login: '',
     password: '',
-    authority: ''
+    profile: ''
 
   }
-
-  
-
 
   constructor(private router: Router,
               private userService: UserService) { }

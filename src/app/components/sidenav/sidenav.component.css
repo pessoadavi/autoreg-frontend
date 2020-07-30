@@ -14,9 +14,17 @@
   .content {
     padding: 16px;
     background-color: white;
-  
+    
   }
   
   button {
     align-items: center;
+  }
+
+  .config {
+    display: flexbox;
+    position: relative;
+    top: 16px;
+    left: 220px;
+    width: 82%;
   }

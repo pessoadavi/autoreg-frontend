@@ -28,7 +28,10 @@ export class UpdateReguladorComponent implements OnInit {
   }
 
   updateReg(): void {
-
+    this.reguladorService.create(this.regulador).subscribe(() => {
+      this.reguladorService.showMessage('Regulador Atualizado!!!')
+      this.router.navigate(['/reguladores']);
+    }) 
   }
 
   cancel(): void {

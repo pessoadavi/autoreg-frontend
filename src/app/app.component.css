@@ -1,0 +1,17 @@
+.config {
+    display: flexbox;
+    position: relative;
+    top: 16px;
+    left: 220px;
+    width: auto;
+}
+
+.content {
+    padding: 16px;
+    background-color: white;
+    left: 220px;
+    top: 16px;
+    width: 82%;
+
+    
+}

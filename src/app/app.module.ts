@@ -1,3 +1,5 @@
+import { SharedService } from './services/shared/shared.service';
+import { UserService } from 'src/app/services/userService/user.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -37,6 +39,8 @@ import { DeleteUserComponent } from './crud-user/delete-user/delete-user.compone
 import { ListUserComponent } from './crud-user/list-user/list-user.component';
 import { UpdateUserComponent } from './crud-user/update-user/update-user.component';
 import { MatSelectModule } from '@angular/material/select';
+import { LoginComponent } from './security/login/login.component';
+import { MatTabsModule } from '@angular/material/tabs';
 
 
 
@@ -47,17 +51,22 @@ import { MatSelectModule } from '@angular/material/select';
     HeaderComponent,
     FooterComponent,
     SidenavComponent,
+    
     HomeComponent,
+
     HomeReguladorComponent,
     NewReguladorComponent,
     DeleteReguladorComponent,
     ListReguladorComponent,
     UpdateReguladorComponent,
+    
     HomeUserComponent,
     NewUserComponent,
     DeleteUserComponent,
     ListUserComponent,
-    UpdateUserComponent
+    UpdateUserComponent,
+    
+    LoginComponent
     
   ],
   imports: [
@@ -82,10 +91,11 @@ import { MatSelectModule } from '@angular/material/select';
     MatIconModule,
     MatDialogModule,
     MatCheckboxModule,
-    MatSelectModule
+    MatSelectModule,
+    MatTabsModule
     
   ],
-  providers: [],
+  providers: [UserService, SharedService],
   bootstrap: [AppComponent],
   //entryComponents: [DeleteReguladorComponent]
 })

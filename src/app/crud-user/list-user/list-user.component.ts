@@ -17,7 +17,7 @@ export class ListUserComponent implements OnInit {
   pages: number;
   totalElements: number;
   usuarios: User[];
-  displayedColumns = ['login','email', 'authority', 'action']
+  displayedColumns = ['email', 'profile', 'action']
   event: PageEvent
 
   constructor(private userService: UserService,
