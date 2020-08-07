@@ -1,3 +1,4 @@
+import { AuthGuard } from './security/auth.guard/auth.guard';
 import { LoginComponent } from './security/login/login.component';
 import { UpdateUserComponent } from './crud-user/update-user/update-user.component';
 import { DeleteUserComponent } from './crud-user/delete-user/delete-user.component';
@@ -13,17 +14,17 @@ import { UpdateReguladorComponent } from './crud-regulador/update-regulador/upda
 
 
 const routes: Routes = [
-  { path: 'home', component: HomeComponent},
+  { path: 'home', component: HomeComponent, canActivate: [AuthGuard]},
   
-  { path: 'reguladores', component: HomeReguladorComponent},
-  { path: 'reguladores/create', component: NewReguladorComponent},
-  { path: 'reguladores/delete/:id', component: DeleteReguladorComponent},
-  { path: 'reguladores/update/:id', component: UpdateReguladorComponent},
+  { path: 'reguladores', component: HomeReguladorComponent, canActivate: [AuthGuard]},
+  { path: 'reguladores/create', component: NewReguladorComponent, canActivate: [AuthGuard]},
+  { path: 'reguladores/delete/:id', component: DeleteReguladorComponent, canActivate: [AuthGuard]},
+  { path: 'reguladores/update/:id', component: UpdateReguladorComponent, canActivate: [AuthGuard]},
   
-  { path: 'usuarios', component: HomeUserComponent},
-  { path: 'usuarios/create', component: NewUserComponent},
-  { path: 'usuarios/delete/:id', component: DeleteUserComponent},
-  { path: 'usuarios/update/:id', component: UpdateUserComponent},
+  { path: 'usuarios', component: HomeUserComponent, canActivate: [AuthGuard]},
+  { path: 'usuarios/create', component: NewUserComponent, canActivate: [AuthGuard]},
+  { path: 'usuarios/delete/:id', component: DeleteUserComponent, canActivate: [AuthGuard]},
+  { path: 'usuarios/update/:id', component: UpdateUserComponent, canActivate: [AuthGuard]},
 
   { path: 'login', component: LoginComponent}
 ];

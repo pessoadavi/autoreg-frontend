@@ -1,3 +1,4 @@
+import { AuthGuard } from './security/auth.guard/auth.guard';
 import { SharedService } from './services/shared/shared.service';
 import { UserService } from 'src/app/services/userService/user.service';
 import { BrowserModule } from '@angular/platform-browser';
@@ -10,7 +11,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { SidenavComponent } from './components/sidenav/sidenav.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { HomeComponent } from './components/home/home.component';
 import { HomeReguladorComponent } from './crud-regulador/home-regulador/home-regulador.component';
 import { NewReguladorComponent } from './crud-regulador/new-regulador/new-regulador.component';
@@ -41,6 +42,7 @@ import { UpdateUserComponent } from './crud-user/update-user/update-user.compone
 import { MatSelectModule } from '@angular/material/select';
 import { LoginComponent } from './security/login/login.component';
 import { MatTabsModule } from '@angular/material/tabs';
+import { AuthInterceptor } from './security/auth.interceptor/auth.interceptor';
 
 
 
@@ -93,9 +95,19 @@ import { MatTabsModule } from '@angular/material/tabs';
     MatCheckboxModule,
     MatSelectModule,
     MatTabsModule
-    
   ],
-  providers: [UserService, SharedService],
+
+  providers: [
+    UserService,
+    SharedService,
+    AuthGuard,
+    {
+      provide : HTTP_INTERCEPTORS,
+      useClass : AuthInterceptor,
+      multi : true
+    }
+  ],
+
   bootstrap: [AppComponent],
   //entryComponents: [DeleteReguladorComponent]
 })
