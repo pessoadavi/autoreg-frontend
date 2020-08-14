@@ -28,7 +28,8 @@ export class NewReguladorComponent implements OnInit {
     lastUpdate: ''
   }
 
-  constructor(private router: Router, private reguladorService: ReguladorService) { }
+  constructor(private router: Router, 
+              private reguladorService: ReguladorService) { }
 
   ngOnInit(): void {
   }

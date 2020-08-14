@@ -40,8 +40,6 @@ export class ReguladorService {
     return this.http.get<ResponseApi>(this.baseUrl);
   }
 
-  
-
   /* Método para atualizar os dados de um regulador */
   update(regulador: Regulador):  Observable<Regulador> {
     return this.http.put<Regulador>(`${this.baseUrl}/${regulador.id}`, regulador);

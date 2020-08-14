@@ -1,6 +1,6 @@
 import { ResponseApi } from 'src/app/models/response-api';
 import { ReguladorService } from 'src/app/services/reguladorService/regulador.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Regulador } from 'src/app/models/regulador.model';
 import { PageEvent } from '@angular/material/paginator';
 import { MatDialog } from '@angular/material/dialog';
@@ -18,9 +18,11 @@ export class ListReguladorComponent implements OnInit {
   //pages:Array<number>; // quantidade total de paginas (totalPages)
   totalElements:number; //quantidade total de itens do DB (length)
   reguladores: Regulador[]
-  displayedColumns = ['region','code', 'feeder', 'bus', 'model', 'action']
+  displayedColumns = ['check','region','code', 'feeder', 'bus', 'model', 'action']
   event: PageEvent;
-  
+
+  @Output()
+  idFromCheckButton: EventEmitter<number> = new EventEmitter();
 
   constructor(private reguladorService: ReguladorService,
               private dialog: MatDialog) { }
@@ -41,6 +43,13 @@ export class ListReguladorComponent implements OnInit {
       console.log(this.pages);
 
    });
+  }
+
+  /* Método que guarda o valor de id de determinado regulador quando a caixa é selecionada */
+  selectRegulador(id:number) {
+    
+    this.idFromCheckButton.emit(id);
+    console.log(id);
   }
 
   /* Configuração da paginação do angular material */

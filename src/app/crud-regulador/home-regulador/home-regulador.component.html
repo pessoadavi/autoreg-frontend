@@ -2,11 +2,11 @@
     <button mat-raised-button color="primary" (click)="createRegulador()">
         <i class="material-icons ">add</i>
     </button>
-    <button mat-raised-button color="primary" >
+    <button mat-raised-button color="primary" (click)="updateRegulador()" >
         <i class="material-icons space">launch</i>
     </button>
-    <button mat-raised-button color="primary" >
+    <button mat-raised-button color="primary" (click)="deleteRegulador()" >
         <i class="material-icons space">delete_outline</i>
     </button>
 </mat-card>
-<app-list-regulador></app-list-regulador>
+<app-list-regulador (idFromCheckButton)="receiveId($event)" ></app-list-regulador>

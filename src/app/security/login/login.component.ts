@@ -13,7 +13,6 @@ import { Component, OnInit } from '@angular/core';
 
 export class LoginComponent implements OnInit {
   
-  shared : SharedService;
   user: User = {
     
     email: '',
@@ -23,8 +22,9 @@ export class LoginComponent implements OnInit {
   }
 
   constructor(private userService: UserService,
-               private router: Router) {
-                this.shared = SharedService.getInstance();
+              private sharedService: SharedService,
+              private router: Router) {
+                this.sharedService = SharedService.getInstance();
               }
 
   ngOnInit(): void {
@@ -32,22 +32,22 @@ export class LoginComponent implements OnInit {
 
   login() {
     this.userService.login(this.user).subscribe((userAuthetication: CurrentUser) => {
-      this.shared.user = userAuthetication.user;
-      this.shared.token = userAuthetication.token;
-      this.shared.showTemplate.emit(true);
-      this.shared.user.profile = this.shared.user.profile.substring(5);
+      this.sharedService.user = userAuthetication.user;
+      this.sharedService.token = userAuthetication.token;
+      this.sharedService.showTemplate.emit(true);
+      this.sharedService.user.profile = this.sharedService.user.profile.substring(5);
       this.router.navigate(['/home']);
     }, err => {
-      this.shared.user = null;
-      this.shared.token = null;
-      this.shared.showTemplate.emit(false);
+      this.sharedService.user = null;
+      this.sharedService.token = null;
+      this.sharedService.showTemplate.emit(false);
       this.userService.showMessage("Login ou senha incorretos");
     });
   }
   
   cancelLogin() {
-    this.shared.user = null;
-    this.shared.token = null;
+    this.sharedService.user = null;
+    this.sharedService.token = null;
     this.router.navigate(['/usuarios/login']);
   }
 }

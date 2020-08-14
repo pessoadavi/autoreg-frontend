@@ -13,16 +13,14 @@ export class UpdateReguladorComponent implements OnInit {
   regulador: Regulador;
   CurrentId: number;
 
-  constructor(
-              private router: Router,
+  constructor(private router: Router,
               private reguladorService: ReguladorService, 
-              private route: ActivatedRoute
-  ) { }
+              private route: ActivatedRoute) { }
   
   ngOnInit(): void {
     const id = +this.route.snapshot.paramMap.get('id');
-    this.reguladorService.readById(id).subscribe(curretnRegulador => {
-      this.regulador = curretnRegulador['data'];
+    this.reguladorService.readById(id).subscribe(currentRegulador => {
+      this.regulador = currentRegulador['data'];
       this.CurrentId = id;
     })
   }

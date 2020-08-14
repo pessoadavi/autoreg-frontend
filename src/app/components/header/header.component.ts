@@ -11,11 +11,9 @@ import { Router } from '@angular/router';
 })
 export class HeaderComponent implements OnInit {
 
-  shared: SharedService;
-
-  constructor(private userService: UserService,
-              private router: Router) { 
-      this.shared = SharedService.getInstance();
+  constructor(private router: Router,
+              private sharedService: SharedService) { 
+      this.sharedService = SharedService.getInstance();
       
   }
 
@@ -23,9 +21,9 @@ export class HeaderComponent implements OnInit {
   }
 
   logout(): void {
-    this.shared.token = null;
-    this.shared.user = null;
-    this.shared.showTemplate.emit(false);
+    this.sharedService.token = null;
+    this.sharedService.user = null;
+    this.sharedService.showTemplate.emit(false);
     //window.location.reload();
     this.router.navigate(['/login']);
   }
