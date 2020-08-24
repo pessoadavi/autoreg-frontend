@@ -11,13 +11,18 @@
         <mat-form-field class="inputForm">
             <input matInput placeholder="Senha" [(ngModel)] = user.password name="password">
         </mat-form-field>
-        <mat-form-field appearance="fill">
+        <mat-form-field class="inputForm">
+            <input matInput placeholder="Permissão" [(ngModel)] = user.profile name="profile">
+        </mat-form-field>
+        <!--
+        <mat-form-field appearance="fill">            
             <mat-label>Permissão</mat-label>
             <mat-select >
-              <mat-option [(ngModel)] = user.password value="ADMIN" name="password">Administrador</mat-option>
-              <mat-option [(ngModel)] = user.password value="USER" name="password">Usuário</mat-option>
+              <mat-option [(ngModel)] = user.password value="ROLE_ADMIN" name="password">Administrador</mat-option>
+              <mat-option [(ngModel)] = user.password value="ROLE_USER" name="password">Usuário</mat-option>
             </mat-select>
-          </mat-form-field>
+        </mat-form-field>
+        -->
     </form>
 </mat-card>
 <button mat-raised-button color="primary" (click)="cancel()"><mat-icon>cancel</mat-icon></button>

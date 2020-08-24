@@ -18,7 +18,7 @@ export class ListReguladorComponent implements OnInit {
   //pages:Array<number>; // quantidade total de paginas (totalPages)
   totalElements:number; //quantidade total de itens do DB (length)
   reguladores: Regulador[]
-  displayedColumns = ['check','region','code', 'feeder', 'bus', 'model', 'action']
+  displayedColumns = ['check','region','code', 'feeder', 'bus', 'model'/*, 'action*/]
   event: PageEvent;
 
   @Output()

@@ -26,11 +26,11 @@ export class HomeReguladorComponent implements OnInit {
   }
 
   deleteRegulador():void {
-    this.router.navigate(['/reguladores/delete/{{id}}']);
+    this.router.navigate(['/reguladores/delete', this.id]); 
   }
 
   updateRegulador():void {
-    this.router.navigate(['/reguladores/update/{{id}}']);
+    this.router.navigate(['/reguladores/update', this.id]);
   }
 
 }

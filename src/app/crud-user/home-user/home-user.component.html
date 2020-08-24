@@ -1,12 +1,18 @@
 <mat-card class="mat-elevation-z3 " >
-    <button mat-raised-button color="primary" (click)="createUser()">
+    <button mat-stroked-button color="primary" (click)="createUser()">
         <i class="material-icons ">add</i>
     </button>
-    <button mat-raised-button color="primary" >
+    <button mat-stroked-button color="primary" (click)="updateUser()">
         <i class="material-icons space">launch</i>
     </button>
-    <button mat-raised-button color="primary" >
+    <button mat-stroked-button color="primary" (click)="deleteUser()">
         <i class="material-icons space">delete_outline</i>
     </button>
+    <mat-form-field appearance="outline" class="teste">
+        <mat-label>Procurar</mat-label>
+        <input matInput>
+        <mat-icon matSuffix>search</mat-icon>
+    </mat-form-field>
 </mat-card>
-<app-list-user></app-list-user>
+
+<app-list-user (idFromCheckButtom)="receiveId($event)" ></app-list-user>

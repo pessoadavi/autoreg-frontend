@@ -2,3 +2,12 @@ mat-card {
     display: flex;
     flex-direction: row;
 }
+
+.teste {
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    top: 5px;
+    left: 80%;
+      
+}

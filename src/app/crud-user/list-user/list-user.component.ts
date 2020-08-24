@@ -3,7 +3,7 @@ import { ResponseApi } from './../../models/response-api';
 import { MatDialog } from '@angular/material/dialog';
 import { UserService } from './../../services/userService/user.service';
 import { PageEvent } from '@angular/material/paginator';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-list-user',
@@ -17,8 +17,11 @@ export class ListUserComponent implements OnInit {
   pages: number;
   totalElements: number;
   usuarios: User[];
-  displayedColumns = ['email', 'profile', 'action']
+  displayedColumns = ['check','email', 'profile'/*, 'action'*/]
   event: PageEvent
+
+  @Output()
+  idFromCheckButtom: EventEmitter<number> = new EventEmitter();
 
   constructor(private userService: UserService,
               private dialog: MatDialog) { }
@@ -36,6 +39,12 @@ export class ListUserComponent implements OnInit {
 
     });
   }
+
+  /* Método que guarda o valor do id do usuário quando o check buttom for selecionado */
+  selectUser(id: number) {
+    this.idFromCheckButtom.emit(id);
+  }
+
 
   /* Configuração da paginação do angular material */
   setPageEvent(event?:PageEvent) {
