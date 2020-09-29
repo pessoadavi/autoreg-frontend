@@ -2,43 +2,41 @@
     <table mat-table [dataSource] = "reguladores" matSort>
         
         <!-- check Column -->
-        <ng-container matColumnDef="check">
-            <th mat-header-cell *matHeaderCellDef ></th>
-            <td mat-cell *matCellDef="let row"> {{row.check}} 
-                <mat-checkbox (click)="selectRegulador(row.id)"></mat-checkbox>
-            </td>
-        </ng-container>
-        
-
+            <ng-container matColumnDef="check">
+                <th mat-header-cell *matHeaderCellDef ></th>
+                <td mat-cell *matCellDef="let row"> {{row.check}} 
+                    <mat-checkbox (click)="selectRegulador(row.id)"></mat-checkbox>
+                </td>
+            </ng-container>
         <!-- region Column -->
-        <ng-container matColumnDef="region">
-            <th mat-header-cell *matHeaderCellDef > Área </th>
-            <td mat-cell *matCellDef="let row"> {{row.region}} </td>
-        </ng-container>
+            <ng-container matColumnDef="region">
+                <th mat-header-cell *matHeaderCellDef > Área </th>
+                <td mat-cell *matCellDef="let row"> {{row.region}} </td>
+            </ng-container>
         
         <!-- code Column -->
-        <ng-container matColumnDef="code">
-            <th mat-header-cell *matHeaderCellDef > Código </th>
-            <td mat-cell *matCellDef="let row"> {{row.code}} </td>
-        </ng-container>
+            <ng-container matColumnDef="code">
+                <th mat-header-cell *matHeaderCellDef > Código </th>
+                <td mat-cell *matCellDef="let row"> {{row.code}} </td>
+            </ng-container>
 
         <!-- feeder Column -->
-        <ng-container matColumnDef="feeder">
-            <th mat-header-cell *matHeaderCellDef > Subestação </th>
-            <td mat-cell *matCellDef="let row"> {{row.feeder}} </td>
-        </ng-container>
+            <ng-container matColumnDef="feeder">
+                <th mat-header-cell *matHeaderCellDef > Subestação </th>
+                <td mat-cell *matCellDef="let row"> {{row.feeder}} </td>
+            </ng-container>
 
         <!-- bus Column -->
-        <ng-container matColumnDef="bus">
-            <th mat-header-cell *matHeaderCellDef > Alimentador </th>
-            <td mat-cell *matCellDef="let row"> {{row.bus}} </td>
-        </ng-container>
+            <ng-container matColumnDef="bus">
+                <th mat-header-cell *matHeaderCellDef > Alimentador </th>
+                <td mat-cell *matCellDef="let row"> {{row.bus}} </td>
+            </ng-container>
 
          <!-- model Column -->
-        <ng-container matColumnDef="model">
-            <th mat-header-cell *matHeaderCellDef > Modelo </th>
-            <td mat-cell *matCellDef="let row"> {{row.model}} </td>
-        </ng-container>
+            <ng-container matColumnDef="model">
+                <th mat-header-cell *matHeaderCellDef > Modelo </th>
+                <td mat-cell *matCellDef="let row"> {{row.model}} </td>
+            </ng-container>
 
         <!-- action Column -->
         <!--

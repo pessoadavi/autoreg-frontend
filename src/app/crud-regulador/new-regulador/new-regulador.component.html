@@ -38,19 +38,18 @@
             <input matInput placeholder="Ano de Fabricação" [(ngModel)] = regulador.yearManufacture name="yearManufacture">
         </mat-form-field>
     </form>
-    <!--
     <form>
         <mat-form-field class="inputForm">
-            <input matInput placeholder="Data de Energização" [(ngModel)] = regulador.voltage name="dateEnergization">
+            <input matInput placeholder="Data de Energização" [(ngModel)] = regulador.dateEnergization name="dateEnergization">
         </mat-form-field>
         <mat-form-field class="inputForm">
-            <input matInput placeholder="Última Inspeção" [(ngModel)] = regulador.eCurrent name="lastInspetion">
+            <input matInput placeholder="Última Inspeção" [(ngModel)] = regulador.lastInspetion name="lastInspetion">
         </mat-form-field>
         <mat-form-field class="inputForm">
-            <input matInput placeholder="Última Atualização" [(ngModel)] = regulador.lVoltage name="lastUpdate">
+            <input matInput placeholder="Última Atualização" [(ngModel)] = regulador.lastUpdate name="lastUpdate">
         </mat-form-field>
     </form>
-    -->
+    
 </mat-card>
 <button mat-raised-button color="primary" (click)="cancel()"><mat-icon>cancel</mat-icon></button>
 <button mat-raised-button color="primary" (click)="create()" class="card"><mat-icon>save</mat-icon></button>

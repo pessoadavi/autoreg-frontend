@@ -10,8 +10,8 @@ export interface Regulador {
     lVoltage: String;
     manufacturer: String;
     yearManufacture: String;
-    dateEnergization: any;
-    lastInspetion: any;
-    lastUpdate: any;
+    dateEnergization: String;
+    lastInspetion: String;
+    lastUpdate: String;
 
 }
