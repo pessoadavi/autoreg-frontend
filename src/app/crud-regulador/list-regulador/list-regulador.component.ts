@@ -15,7 +15,6 @@ export class ListReguladorComponent implements OnInit {
   page:number = 0; // pagina atual (pageIndex)
   count:number = 10; // quantidade de itens listados na pagina (pagesize)
   pages:number; // quantidade total de paginas (totalPages)
-  //pages:Array<number>; // quantidade total de paginas (totalPages)
   totalElements:number; //quantidade total de itens do DB (length)
   reguladores: Regulador[]
   displayedColumns = ['check','region','code', 'feeder', 'bus', 'model'/*, 'action*/]
@@ -24,8 +23,7 @@ export class ListReguladorComponent implements OnInit {
   @Output()
   idFromCheckButton: EventEmitter<number> = new EventEmitter();
 
-  constructor(private reguladorService: ReguladorService,
-              private dialog: MatDialog) { }
+  constructor(private reguladorService: ReguladorService) { }
 
   ngOnInit(): void {
     this.findAll(this.page,this.count);
@@ -36,7 +34,6 @@ export class ListReguladorComponent implements OnInit {
     this.reguladorService.read(page,count).subscribe((responseApi:ResponseApi) =>{
       this.reguladores = responseApi['data']['content']; // data: todas as infomaçoes de obj, paginação  etc. content: informação de cada obj listado 
       this.pages = responseApi['data'] ['totalPages']; // totalPages: numero total de paginas 
-      //this.pages = new Array(responseApi['data'] ['totalPages']); // totalPages: numero total de paginas 
       this.totalElements = responseApi['data']['totalElements']; //totalElements: total de itens do DB
       console.log(responseApi);
       console.log(this.totalElements);

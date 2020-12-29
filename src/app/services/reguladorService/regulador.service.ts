@@ -36,9 +36,9 @@ export class ReguladorService {
   }
 
   /* Método que lerá todos os reguladores cadastrados */
-  read2(): Observable<ResponseApi> {
-    return this.http.get<ResponseApi>(this.baseUrl);
-  }
+  //read2(): Observable<ResponseApi> {
+  //return this.http.get<ResponseApi>(this.baseUrl);
+  //}
 
   /* Método para atualizar os dados de um regulador */
   update(regulador: Regulador):  Observable<Regulador> {

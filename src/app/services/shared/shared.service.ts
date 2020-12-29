@@ -34,27 +34,3 @@ export class SharedService {
 }
 
 
-/* 
-export class SharedService {
-
-  user: User;
-  token: string;
-
-  private logicSourceTemplate = new BehaviorSubject<boolean>(true);
-  currentLogic = this.logicSourceTemplate.asObservable();
-
-  constructor() {}
-
-
-  changeLogicTemplate(logic: boolean) {
-    this.logicSourceTemplate.next(logic);
-  }
-
-
-
-
-
-
-
-
-}*/
